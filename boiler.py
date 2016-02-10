@@ -38,7 +38,6 @@ def getTemperatureReglage():
 def TemperaturePonctuellePlus(channel):
         global temperatureReglage
         temperatureReglage = temperatureReglage + 1
-        print('test')
 
 
 def TemperaturePonctuelleMoins(channel):
@@ -68,7 +67,7 @@ def setup():
 
         ### Button Plus
         GPIO.setup(BtnPinPlus, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-        GPIO.add_event_detect(BtnPinPlus, GPIO.FALLING, callback=TemperaturePonctuelleMoins)
+        GPIO.add_event_detect(BtnPinPlus, GPIO.FALLING, callback=TemperaturePonctuellePlus)
 
         ### Button Moins
         GPIO.setup(BtnPinMoins, GPIO.IN, pull_up_down=GPIO.PUD_UP)
