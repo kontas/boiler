@@ -10,15 +10,17 @@ import time
 import RPi.GPIO as GPIO
 
 
-#Constantes
+# Configuration des PIN
 LedPin          = 4
 BtnPinPlus      = 21
 BtnPinMoins     = 17
+lcd             = Adafruit_CharLCD(26,19,[13, 06, 05, 11])
+
+
+# Constantes
 chaudiere       = 0
 chaudiereM      = 'OFF'
 temperatureReglage = 42
-
-lcd = Adafruit_CharLCD()
 
 
 # Temperature de la sonde

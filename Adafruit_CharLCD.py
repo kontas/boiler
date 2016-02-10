@@ -58,7 +58,7 @@ class Adafruit_CharLCD(object):
     LCD_5x10DOTS            = 0x04
     LCD_5x8DOTS             = 0x00
 
-    def __init__(self, pin_rs=26, pin_e=19, pins_db=[13, 06, 05, 11], GPIO=None):
+    def __init__(self, pin_rs, pin_e, pins_db, GPIO=None):
         # Emulate the old behavior of using RPi.GPIO if we haven't been given
         # an explicit GPIO interface to use
         if not GPIO:
@@ -207,10 +207,4 @@ class Adafruit_CharLCD(object):
                 self.write4bits(0xC0)  # next line
             else:
                 self.write4bits(ord(char), True)
-
-
-if __name__ == '__main__':
-    lcd = Adafruit_CharLCD()
-    lcd.clear()
-    #lcd.message("C'est la miou")
 
